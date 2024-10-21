@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo Telefonico</title>
+</head>
+<body>
+    <td><i>
+        Recibo de Telefonico
+        </i>
+        <input type="text" name="numerico" id="mincel">
+        <label for="mincel">Minutos de Celular (1.00 c/u)</label>
+    </td>
+    <style>
+        table{
+            background-color: darkkhaki;
+        }
+    </style>
+<table width="120px" border="1" color="skyblue">
+    <thead>
+    <tr>
+       <th>Tipo de plan</th>
+       
+       <th>Otros Servicios</th>
+       <th>Paquetes</th>
+    </tr>
+    <tr>
+     
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <input type="radio" name="tipoplan" id="tipoplan">
+                <label for="tipoplan">Solo telefono</label>
+                <br>
+                <input type="radio" name="tipoplan" id="tipoplan">
+                <label for="tipoplan">Telefono+Internet</label>
+                <br>
+                <input type="radio" name="tipoplan" id="tipoplan">
+                <label for="tipoplan">Telefono+Internet+TV</label>
+
+            </td>
+        
+        
+        
+            <td>
+            <input type="checkbox" name="otros" id="otros">
+            <label for="otros">Antivirus</label>
+            <br>
+            <input type="checkbox" name="otros" id="otros">
+            <label for="otros">Servicio de Nube</label>
+            <br>
+            <input type="checkbox" name="otros" id="otros">
+            <label for="otros">Web Services</label>
+
+
+            </td>
+        
+        
+            <td>
+                <select name="paquetes" id="paquetes">
+                    <option value="1">RESIDENCIAL</option>
+                    <option value="2">PYMES</option>
+                    <option value="3">EMPRESAS</option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot></tfoot>
+</table>
+<button type="display"> Gracias por su pago</button>
+</body>
+</html>
