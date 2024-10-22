@@ -6,13 +6,14 @@
     <title>Document</title>
 </head>
 <body>
+    <form action="Menu">
     <table>
         <thead>
             <tr>
                 
                 <th colspan="2">Seleccionar producto</th>
-                <th colspan="2">Detalles de mi hamburguesa</th>
-                <th>Cantidad y Orden</th>
+                <th >Detalles de mi hamburguesa</th>
+                <th >Cantidad y Orden</th>
             </tr>
         </thead>
         <tbody>
@@ -67,10 +68,37 @@
                  <br>
                  <input type="checkbox" name="IngredientePiña" id="checkboxPiña" value="Piña">
                  <label for="checkboxPiña">Piña</label>
+                 <br>
+                 <input type="checkbox" name="IngredientePeperoni" id="checkboxPeperoni" value="Peperoni">
+                 <label for="checkboxPeperoni">Peperoni</label>
+                 <br>
+                 <input type="checkbox" name="Ingredientechampiñon" id="checkboxchampiñon" value="checkboxchampiñon">
+                 <label for="checkboxchampiñon">Champiñon</label>
+                </td>
+                <br>
+                <td>
+
+
+                    <input type="number" name="cantidadhamb" id="Inpcantidadhamb" >
+                    <label for="cantidadhamb">Cantidad</label>
+                    <br>
+                    <input type="text" name="Cliente" id="inpCliente">
+                    <label for="inpCliente">Cliente</label>
+                    <br>
+                    <select name="tipoEntrega" id="lstEntrega">
+                        <option value="1">A domicilio</option>
+                        <option value="2">Comer aqui</option>
+                        <option value="3">Pick Up Order</option>
+                    </select>
+                    
+
                 </td>
             </tr>
         </tbody>
         <tfoot></tfoot>
     </table>
+    <input type="submit" value="Enviar Datos">
+    <button type="submit">Guardar</button>
+    </form>
 </body>
 </html>
