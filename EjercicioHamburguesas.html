@@ -6,7 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="Menu">
+ <form id="formulario" action="">
+
+    
     <table>
         <thead>
             <tr>
@@ -31,6 +33,8 @@
                     <br>
                     <input type="radio" name="tipohamburguesa" id="radiohambsuprema" value="hambsuprema">
                     <label for="hambsuprema">Hamburguesa Suprema 90.00 MXN</label>
+                    <br>
+
                     
                 </td>
                 <td>
@@ -97,8 +101,69 @@
         </tbody>
         <tfoot></tfoot>
     </table>
-    <input type="submit" value="Enviar Datos">
-    <button type="submit">Guardar</button>
+    <!-- <input type="submit" value="Enviar Datos"> -->
+    <button type="submit">Enviar datos</button>
+    
     </form>
 </body>
+<script>
+  var tabla = document.getElementsByTagName("table");
+  var registros = document.getElementsByTagName("tr");
+  var inputs = document.getElementsByTagName("input");
+  var nuevo = document.createElement("input");
+
+
+//   labelNuevo = document.createElement("label");
+//   var contenido = document.createTextNode
+//   ("Hamburguesa Doble Suprema 120MXN");
+//   labelNuevo.appendChild("contenidolabel");
+//   opciones[0].appendChild("labelNuevo");
+  
+
+  var parrafos = document.getElementsByTagName("tipohamburguesa");
+  var element1 = document.getElementById("radiopollo");
+  var elementoclase = document.getElementsByClassName("Carne de Pollo")
+
+  var parrafos = document.getElementsByTagName("Hamburguesa Suprema 90 MXN")
+
+  var nuevo = document.createElement("h1");
+  var contenido = document.createTextNode("Este es mi nuevo nod");
+  nuevo.appendChild(contenido);
+  document.getElementById("hola mundo");
+  nuevo.setAttribute("class", "hola mundo");
+
+//   RadioNodeList = document.createElement("label");
+//   var contenidoradio = document.createTextNode
+//   ("Hamburguesa tradicional 35.00 MXN");
+//   RadioNodeList.appendChild("contenidoradio");
+//   opciones[0].appendChild("radio");
+  
+
+  //
+  var formulario = document.getElementById("formulario");
+
+  //palabra reservada es function
+  //seguido del nombre de la funcion entre parentesis.
+  //los parametros, que en este caso es la variable "e" puede ser opcional
+  //
+  function calcular(e){
+
+    // var total = 0.0
+    // if (formulario.tipohamburguesa.value == "hambsencilla") {
+    //     total = 49.99;
+    // }
+    // else if (formulario.tipohamburguesa.value == "hambdoble") {
+    //     total = 99.99;
+    // }
+    // else if (formulario.tipohamburguesa.value == "hambsuprema") {
+    //     total = 199.99;
+    // }
+    
+    alert("Total a paghar es de :" + total);
+
+}
+//se agrega la funcion ralizada a el formulario con la instruccion addeventlistener
+    formulario.addEventListener("submit", calcular);
+
+</script>
 </html>
