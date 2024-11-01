@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones JS</title>
+</head>
+
+<body>
+    <form id="operacion" action="">
+        <label for="">Escribe el número 1:</label>
+        <input id="numeroUno" type="number">
+        <br>
+        <label for="">Escribe el número 2:</label>
+        <input id="numeroDos" type="number">
+        <br>
+        <button id="boton" type="submit">Sumar los números</button>
+        <button id="botonr" type="submit">Restar los numeros</button>
+    </form>
+
+
+
+<script>
+    function suma(n1, n2) {
+        var resultado;
+        resultado = n1 + n2;
+        return resultado;
+    }
+
+     //Forma 1 de obtener la información
+     
+    function operacion(e){
+        var inputs = document.getElementsByTagName("input");
+        var numUnoUsuario = parseFloat(inputs[0].value);
+        var numDosUsuario = parseFloat(inputs[1].value);
+
+        var mostrar = suma(numUnoUsuario, numDosUsuario);
+        alert(mostrar);
+    }
+
+    var boton = document.getElementById("boton");
+    boton.addEventListener("click", operacion);
+
+
+
+
+    function Restar(n1, n2) {
+        var resultado;
+        resultado = n1 - n2;
+        return resultado;
+    }
+
+    
+     
+    function operacion(e){
+        var inputs = document.getElementsByTagName("input");
+        var numUnoUsuario = parseFloat(inputs[0].value);
+        var numDosUsuario = parseFloat(inputs[1].value);
+
+        var mostrar = Restar(numUnoUsuario, numDosUsuario);
+        alert(mostrar);
+    }
+
+    var boton = document.getElementById("botonr");
+    boton.addEventListener("click", operacion);
+    
+      
+    function operacionR(e){
+        var inputs = document.getElementsByTagName("input");
+        var numUnoRUsuario = parseFloat(inputs[0].value);
+        var numDosRUsuario = parseFloat(inputs[1].value);
+
+        var mostrar = resta(numUnoRUsuario, numDosRUsuario);
+        alert(mostrar);
+    }
+
+    var botonR = document.getElementById("botonR");
+    botonR.addEventListener("click", operacionR);
+
+    
+</script>
+
+</body>
+</html>
