@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo Telefónico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: orange;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background: gray;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            align-self: center;
+        }
+
+        button {
+            background-color: #a7aab9;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #7a39a1;
+        }
+    </style>
+</head>
+<body>
+    <h1>RECIBO TELEFONICO</h1>
+    <form id="formulario">
+        <center><label for="minutos">Minutos de celular (1.00 c/u)</label></center>
+        <input type="number" id="minutos" min="0" step="1"><br><br>
+
+        <center><label>Tipo de Plan</label></center>
+        <input type="radio" name="plan" id="planuno" value="500"> Solo Internet (500 MXN)<br>
+        <input type="radio" name="plan" id="plandos" value="650"> Teléfono + Internet (650 MXN)<br>
+        <input type="radio" name="plan" id="plantres" value="800"> Teléfono + Internet + TV (800 MXN)<br>
+        <input type="radio" name="plan" id="plancutra" value="950"> Teléfono + Internet (100 Mbps) + 2 TV (950 MXN)<br>
+        <br>
+
+        <center><label>Otros servicios</label></center>
+        <input type="checkbox" id="antivirus" value="50"> Antivirus (50 MXN)<br>
+        <input type="checkbox" id="nube" value="70"> Servicios de Nube (70 MXN)<br>
+        <input type="checkbox" id="webservices" value="90"> Web Services (90 MXN)<br>
+        <input type="checkbox" id="firewall" value="110"> Firewall (110 MXN)<br>
+        <br>
+
+        <center><label>Paquetes</label></center>
+        <select id="paquete">
+            <option value="100">Residencial (100 MXN)</option>
+            <option value="150">Pymes (150 MXN)</option>
+            <option value="200">Empresas (200 MXN)</option>
+            <option value="50">Universidades (50 MXN)</option>
+        </select><br><br>
+
+        <center><button type="button" id="botonuno">Calcular</button></center>
+    </form>
+
+    <div id="resultado" style="display:none; margin-top: 20px; padding: 20px; background: #f4f4f4; border-radius: 5px;">
+        <h3>Resumen de tu recibo</h3>
+        <p><strong>Total a pagar:</strong> <span id="totalPagar">0</span> MXN</p>
+    </div>
+
+<script>
+    document.getElementById('boton1').onclick = function() {
+        // Obtener los valores del formulario
+        const minutos = parseFloat(document.getElementById('minutos').value) || 0;
+        const plan = document.querySelector('input[name="plan"]:checked');
+        const paquete = parseFloat(document.getElementById('paquete').value) || 0;
+        const antivirus = document.getElementById('antivirus').checked ? 50 : 0;
+        const nube = document.getElementById('nube').checked ? 70 : 0;
+        const webservices = document.getElementById('webservices').checked ? 90 : 0;
+        const firewall = document.getElementById('firewall').checked ? 110 : 0;
+
+        // Validar que se haya seleccionado un plan
+        if (!plan) {
+            alert("Por favor, selecciona un plan.");
+            return;
+        }
+
+        // Calcular el total
+        const costoMinutos = minutos * 1; // 1 MXN por minuto
+        const costoPlan = parseFloat(plan.value);
+        const costoServicios = antivirus + nube + webservices + firewall;
+
+        const total = costoMinutos + costoPlan + costoServicios + paquete;
+
+        // Mostrar el resultado
+        document.getElementById('totalPagar').textContent = total.toFixed(2);
+        document.getElementById('resultado').style.display = 'block';
+    };
+</script>
+
+</body>
+</html>
